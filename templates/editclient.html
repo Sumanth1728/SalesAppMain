@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>login page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+</head>
+    <body>
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
+       <strong>{{message }}</strong>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+      <h1>Edit  Client Information</h1>
+         <form method=post >
+           {{ form.hidden_tag() }}
+           <table border = "0" cellspacing=20%>
+
+                  <tr>
+                     <th>{{ form.name.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.name }}</td>
+                  </tr>
+
+                  <tr>
+                     <th>{{ form.houseno.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.houseno }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.street.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.street }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.city.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.city }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.Region.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.Region }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.Country.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.Country }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.postalcode.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.postalcode }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.phone.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.phone }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.email.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.email }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.timezone.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.timezone }}</td>
+                  </tr>
+                  <tr>
+                     <th>{{ form.functionalarea.label }}</th>
+                     <td>  :  </td>
+                     <td>{{ form.functionalarea }}</td>
+                  </tr>
+                  </table>
+
+                  <br>
+                  <br>
+                     {{ form.submit() }}
+         </form>
+      <br>
+      <br>
+
+  <br>
+  <br>
+
+
+
+
+    </body>
+</html>
